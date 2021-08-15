@@ -127,7 +127,6 @@ function displayMenuItems(menuItems) {
     })
 
     displayMenu = displayMenu.join('');
-    console.log(displayMenu);
     section.innerHTML = displayMenu;
 }
 
