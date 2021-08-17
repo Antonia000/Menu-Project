@@ -55,3 +55,9 @@ body {
         background-color: #996633;
         color: #ffffff;
     }
+
+@media only screen and (max-width: 768px) {
+    .img {
+        width: 50px;
+    }
+}

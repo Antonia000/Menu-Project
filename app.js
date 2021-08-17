@@ -83,7 +83,7 @@ const buttons = document.querySelector('.container');
 //load content
 window.addEventListener("DOMContentLoaded", function () {
     displayMenuItems(menu);
-    
+
     const categories = menu.reduce(function (values, item) {
         if (!values.includes(item.category)) {
             values.push(item.category);
@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", function () {
         return values;
     }, ['all'])
 
-//adding buttons dinamically
+    //adding buttons dinamically
     const categoryBtns = categories.map(function (category) {
         return `<button class="btn filter-btn mr-3" type="button" data-category=${category}>${category}</button>`;
     }).join('');
@@ -99,27 +99,27 @@ window.addEventListener("DOMContentLoaded", function () {
     buttons.innerHTML = categoryBtns;
     const filterBtns = document.querySelectorAll('.filter-btn');
 
-//filtering
- filterBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-        const category = e.currentTarget.dataset.category;
-        const menuCategory = menu.filter(function (menuItem) {
-            if (menuItem.category === category) {
-                return menuItem;
-            }
+    //filtering
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            const category = e.currentTarget.dataset.category;
+            const menuCategory = menu.filter(function (menuItem) {
+                if (menuItem.category === category) {
+                    return menuItem;
+                }
+            })
+
+            if (category === "all") displayMenuItems(menu);
+            else displayMenuItems(menuCategory);
+
         })
-
-        if (category === "all") displayMenuItems(menu);
-        else displayMenuItems(menuCategory);
-
     })
-})
 })
 
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
-        return `<div class="menu-item col-6 mb-3">
-                  <img class="img photo" src=${item.img} alt=${item.title}>
+        return `<div class="menu-item col-6 col-sm-12 mb-3">
+                  <img class="img" src=${item.img} alt=${item.title}>
                   <h4 class="underline item-info">${item.title}</h4>
                   <h4 class="price item-info">${item.price}$</h4>
                   <p class="description item-text">${item.info}</p>
