@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //adding buttons dinamically
     const categoryBtns = categories.map(function (category) {
-        return `<button class="btn filter-btn mr-3" type="button" data-category=${category}>${category}</button>`;
+        return `<button class="btn filter-btn m-2" type="button" data-category=${category}>${category}</button>`;
     }).join('');
 
     buttons.innerHTML = categoryBtns;
@@ -118,8 +118,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
-        return `<div class="menu-item col-6 col-sm-12 mb-3">
-                  <img class="img" src=${item.img} alt=${item.title}>
+        return `<div class="menu-item col-md-6 mb-5">
+                  <img class="img photo" src=${item.img} alt=${item.title}>
                   <h4 class="underline item-info">${item.title}</h4>
                   <h4 class="price item-info">${item.price}$</h4>
                   <p class="description item-text">${item.info}</p>

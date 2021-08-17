@@ -3,6 +3,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffe6cc;
+    margin: 0;
+    padding: 0;
 }
 
 .title {
@@ -29,7 +31,6 @@ body {
     font-size: small;
     display: inline-block;
     width: 230px;
-    float: left;
 }
 
 .underline {
@@ -56,8 +57,28 @@ body {
         color: #ffffff;
     }
 
-@media only screen and (max-width: 768px) {
-    .img {
-        width: 50px;
+@media only screen and (max-width:768px) {
+    .menu-item .img {
+        width: 90px;
+        height: 90px;
+        border: none;
+    }
+
+    .underline {
+        width: 150px;
+    }
+
+    .title {
+        display: block;
+        width: 300px;
+        margin: auto;
+    }
+
+    .description {
+        display: block;
+    }
+
+    .item-info {
+        font-size: 18px;
     }
 }
